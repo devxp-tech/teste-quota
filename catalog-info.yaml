@@ -1,0 +1,37 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "teste-quota"
+  description: "Teste Quota"
+  annotations:
+    github.com/project-slug: devxp-tech/teste-quota
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-name: dev-teste-quota
+    backstage.io/kubernetes-id: "teste-quota"
+    sonarqube.org/project-key: "teste-quota"
+    grafana/tag-selector: "kubernetes"
+    prometheus.io/rule: container_cpu_usage_seconds_total{namespace="teste-quota"}
+    prometheus.io/alert: all
+  links:
+    - url: https://teste-quota.diegoluisi.eti.br
+      title: Website
+      icon: Website
+    - url: https://grafana.diegoluisi.eti.br/
+      title: Dashboard
+      icon: dashboard      
+    - url: https://alerts.diegoluisi.eti.br/
+      title: Alerts
+      icon: alert 
+    - url: https://argocd.diegoluisi.eti.br/applications/dev-teste-quota?resource=
+      title: ArgoCD
+      icon: cloud
+  tags:
+    - golang
+    - "lab"
+    - "service"
+    - "experimental"
+spec:
+  system: "lab"
+  type:  "service"
+  lifecycle: "experimental"
+  owner: "dev-team"
