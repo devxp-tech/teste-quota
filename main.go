@@ -11,7 +11,7 @@ func main() {
 	server.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"status":  true,
-			"message": "Hello world for your app teste-quota stable",
+			"message": "Hello world for your app teste-quota canary",
 		})
 	})
 	server.GET("/health-check/liveness", controllers.HealthCheckLiveness)
