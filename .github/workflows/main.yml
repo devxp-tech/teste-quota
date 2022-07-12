@@ -112,6 +112,7 @@ jobs:
         #kustomize edit set label version:${{ needs.vars.outputs.tag }} #TODO: Need to fix, add label version @devxp-tech/diegoluisi
         kustomize edit set image diegoluisi/teste-quota:${{ needs.vars.outputs.tag }}
         kustomize edit set annotation version:${{ needs.vars.outputs.tag }}
+        sed -i 's/version.*/version: ${{ needs.vars.outputs.tag }}/' ../../base/teste-quota-rollout.yaml
     - name: Commit Changes
       run: |
         git version
