@@ -111,6 +111,7 @@ jobs:
         cd apps/teste-quota/overlays/dev
         #kustomize edit set label version:${{ needs.vars.outputs.tag }} #TODO: Need to fix, add label version @devxp-tech/diegoluisi
         kustomize edit set image diegoluisi/teste-quota:${{ needs.vars.outputs.tag }}
+        kustomize edit set annotation teste-quota/version:${{ needs.vars.outputs.tag }}
     - name: Commit Changes
       run: |
         git version
